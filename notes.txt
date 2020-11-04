@@ -1,0 +1,21 @@
+steps
+
+goal
+- buttons? for each rover appear
+- onclick, get data for button's rover
+- populate data from api somewhere
+
+dev tasks
+- onclick, button gets rover data via some method 
+- tip: (e.target.value gets name of rover inside button)
+- that method passes name of rover as argument into fetch method
+- the returned data updates the store with data
+- that store is used to populate page with relevant data to that rover
+store.user.name
+OR
+- that store is passed to methods that use data to populate page
+- rover.rover.name
+
+steps
+1. get single rover data from backend
+2. 
