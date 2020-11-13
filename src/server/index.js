@@ -21,7 +21,8 @@ app.get('/latest/:rover', async (req, res) => {
     );
     const data = await image.json();
     const latest = data.latest_photos;
-    res.send({ latest });
+    const value = 2;
+    res.send({ latest, value });
   } catch (err) {
     console.log('error:', err);
   }
@@ -35,8 +36,9 @@ app.get('/images/:rover', async (req, res) => {
     );
     const data = await image.json();
     const roverImages = data.photos.splice(0, 5);
-    const roverData = data.photos[0];
-    res.send({ data, roverData, roverImages });
+    const roverData = Map(data.photos[0]);
+    const value = 1;
+    res.send({ roverData, roverImages, value });
   } catch (err) {
     console.log('error:', err);
   }
