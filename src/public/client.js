@@ -19,17 +19,18 @@ window.addEventListener('load', () => {
 });
 
 const App = (state) => {
-  let { rovers, apod } = state;
-
   return `
-  <header>
-    <div>
-      <h2 class="header-links" onClick={getRoverInfo(this)}>Curiosity</h2>
-      <h2 class="header-links" onClick={getRoverInfo(this)}>Opportunity</h2>
-      <h2 class="header-links" onClick={getRoverInfo(this)}>Spirit</h2>
-      <h2 class="header-links" id="welcome" onClick={show(store)}>Welcome</h2>
-    </div>
-  </header>
+  <header class="header">
+  <a href="" class="logo">Your Logo</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a class="header-links" id="welcome" onClick={show(store)}>Welcome</a></li>
+    <li><a class="header-links" onClick={getRoverInfo(this)}>Curiosity</a></li>
+    <li><a class="header-links" onClick={getRoverInfo(this)}>Opportunity</a></li>
+    <li><a class="header-links" onClick={getRoverInfo(this)}>Spirit</a></li>
+  </ul>
+</header>
   <div class="container-main" id="main-section">        
     <div class="container-info" id="show-info">
       <p id="greeting">${greeting(store)}</p>

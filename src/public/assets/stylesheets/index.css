@@ -3,33 +3,59 @@ body {
   font-family: Arial;
   min-height: 100vh;
   background-image: url('../images/mars.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
   margin: 0;
   padding: 0;
   letter-spacing: 2px;
 }
 
-header {
+/* stay */
+.header {
   position: fixed;
-  background-color: black;
-  height: 60px;
   width: 100%;
-  text-align: justify;
+  z-index: 3;
+  overflow: hidden;
+
+  background-color: black;
 }
 
-#welcome {
-  margin-left: 30px;
+/* stay */
+.header ul {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  float: right;
+}
+
+/* stay */
+.header li a {
+  display: inline-flex;
+  padding: 20px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.header .logo {
+  display: inline-flex;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
 }
 
 #welcome:hover {
   color: orangered;
 }
 
+li {
+  list-style: none;
+}
+
 .header-links {
-  background-color: transparent;
-  color: white;
-  float: right;
-  margin-right: 30px;
   cursor: pointer;
 }
 
@@ -115,26 +141,72 @@ card {
 }
 
 .image4 {
-  grid-column: 1 / span 8; 
+  grid-column: 1 / span 8;
   grid-row: 6 / span 3;
 }
 
-@media (max-width: 625px) {
+.header .menu-btn {
+  display: none;
+}
 
-  header {
-    padding-top: 20px;
-    height: 220px;
+@media (max-width: 625px) {
+  .header .menu {
+    clear: both;
+    display: none;
   }
 
-  .header-links {
-    background-color: transparent;
-    color: white;
-    display: inline-block;
-    width: 80%;
+  .header .menu-icon {
     cursor: pointer;
-    text-align: right;
-    margin: 0;
-    padding: 10px;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: white;
+    content: '';
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: 'background 0.2s ease-out';
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  .header .menu-btn:checked ~ .menu {
+    display: block;
+    max-height: 240px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
   }
 
   .container-main {
@@ -162,24 +234,24 @@ card {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
   }
-  
+
   .image1 {
     grid-column: 1 / span 1;
     grid-row: 2 / span 1;
   }
-  
+
   .image2 {
     grid-column: 1 / span 1;
     grid-row: 3 / span 1;
   }
-  
+
   .image3 {
     grid-column: 1 / span 1;
     grid-row: 4 / span 1;
   }
-  
+
   .image4 {
-    grid-column: 1 / span 1; 
+    grid-column: 1 / span 1;
     grid-row: 5 / span 1;
   }
 
