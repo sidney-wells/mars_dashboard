@@ -20,12 +20,13 @@ window.addEventListener('load', () => {
 
 const App = (state) => {
   return `
+  <div id="around">
     <header class="header">
       <a href="" class="logo">Your Logo</a>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">
-        <li><a class="header-links" id="welcome" onClick={show(store)}>Welcome</a></li>
+        <li><a class="header-links" id="welcome" onClick={show(store)}>Home</a></li>
         <li><a class="header-links" onClick={getRoverInfo(this)}>Curiosity</a></li>
         <li><a class="header-links" onClick={getRoverInfo(this)}>Opportunity</a></li>
         <li><a class="header-links" onClick={getRoverInfo(this)}>Spirit</a></li>
@@ -40,9 +41,10 @@ const App = (state) => {
     <div class="container-images" id="images">
       ${renderImages(store, getImages)}
     </div>
-    <footer>
-      <div>Data From NASA APIs</div>
-    </footer>
+  </div>
+  <footer>
+    <div>Data From NASA APIs</div>
+  </footer>
   `;
 };
 
