@@ -4,7 +4,6 @@ body {
   min-height: 100vh;
   background-image: url('../images/mars.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
   color: white;
   margin: 0;
   padding: 0;
@@ -17,7 +16,6 @@ body {
   width: 100%;
   z-index: 3;
   overflow: hidden;
-
   background-color: black;
 }
 
@@ -105,6 +103,7 @@ card {
 .container-images {
   width: 60%;
   margin: 2rem auto;
+  padding-bottom: 120px;
 }
 
 .gallery {
@@ -148,6 +147,18 @@ card {
 .header .menu-btn {
   display: none;
 }
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-width: 625px) {
   .header .menu {
@@ -210,7 +221,7 @@ card {
   }
 
   .container-main {
-    padding-top: 220px;
+    padding-top: 60px;
   }
 
   card {

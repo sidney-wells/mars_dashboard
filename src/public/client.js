@@ -20,26 +20,29 @@ window.addEventListener('load', () => {
 
 const App = (state) => {
   return `
-  <header class="header">
-  <a href="" class="logo">Your Logo</a>
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-  <ul class="menu">
-    <li><a class="header-links" id="welcome" onClick={show(store)}>Welcome</a></li>
-    <li><a class="header-links" onClick={getRoverInfo(this)}>Curiosity</a></li>
-    <li><a class="header-links" onClick={getRoverInfo(this)}>Opportunity</a></li>
-    <li><a class="header-links" onClick={getRoverInfo(this)}>Spirit</a></li>
-  </ul>
-</header>
-  <div class="container-main" id="main-section">        
-    <div class="container-info" id="show-info">
-      <p id="greeting">${greeting(store)}</p>
-      ${renderCard(store, getCards)}
+    <header class="header">
+      <a href="" class="logo">Your Logo</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="menu">
+        <li><a class="header-links" id="welcome" onClick={show(store)}>Welcome</a></li>
+        <li><a class="header-links" onClick={getRoverInfo(this)}>Curiosity</a></li>
+        <li><a class="header-links" onClick={getRoverInfo(this)}>Opportunity</a></li>
+        <li><a class="header-links" onClick={getRoverInfo(this)}>Spirit</a></li>
+      </ul>
+    </header>
+    <div class="container-main" id="main-section">        
+      <div class="container-info" id="show-info">
+        <p id="greeting">${greeting(store)}</p>
+        ${renderCard(store, getCards)}
+      </div>
     </div>
-  </div>
-  <div class="container-images" id="images">
-    ${renderImages(store, getImages)}
-  </div>
+    <div class="container-images" id="images">
+      ${renderImages(store, getImages)}
+    </div>
+    <footer>
+      <div>Data From NASA APIs</div>
+    </footer>
   `;
 };
 
@@ -120,6 +123,7 @@ const getImages = (images) => {
 };
 
 const show = (store) => {
+  updateStore(store);
   document.getElementById('main-section').style.visibility = 'hidden';
   document.getElementById('images').style.visibility = 'hidden';
   document.getElementById('greeting').style.visibility = 'visible';
