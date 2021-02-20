@@ -1,3 +1,9 @@
+## Overview
+
+This was a Udacity Intermediate Javascript Nanodegree project that was reviewed and passed their program's requirements.
+
+Check out this site live at this url: TBD 
+
 # Functional Programming with Javascript 
 
 ## Student Instructions
