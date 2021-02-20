@@ -1,12 +1,12 @@
 require('dotenv').config();
 const express = require('express');
+const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const path = require('path');
 const { Map } = require('immutable');
 
 const app = express();
-const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -58,4 +58,8 @@ app.get('/images/:rover', (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.use('/.netlify/functions/server', router);  // path must route to lambda
+app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+
+module.exports = app;
+module.exports.handler = serverless(app);
